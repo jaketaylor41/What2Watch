@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>What 2 Watch</title>
+
+    <link rel="stylesheet" th:href="@{/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <!--<link rel="stylesheet" th:href="@{https://bootswatch.com/4/lux/bootstrap.css}"/>-->
+
+    <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/client.js}"></script>
+
+
+</head>
+<body>
+
+<div class="topnav">
+    <a class="nav-link" href="http://localhost:8080/">Home <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="http://localhost:8080/randomSelection">Random Selection</a>
+    <a class="nav-link" href="http://localhost:8080/randomMovie">Find a Random Movie</a>
+    <a class="nav-link" href="http://localhost:8080/randomTV">Find a Random TV Show</a>
+    <a class="nav-link" href="http://localhost:8080/name">Search By Name</a>
+
+</div>
+
+<nav id="movieNav">
+    <div id="mySidenav" class="sidenav">
+        <h5 style="font-family: SF Pro Display Bold; font-size: 40px; text-align: center; color: #818181;">W2W</h5>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="http://localhost:8080/">Home</a>
+        <a href="http://localhost:8080/randomTV">Random TV Show</a>
+        <a href="http://localhost:8080/name">Search By Name</a>
+        <a href="http://localhost:8080/randomSelection">Random Selection</a>
+    </div>
+
+
+    <span id="spanNavIdOne" style="font-size:30px;cursor:pointer; font-family: 'SF Pro Display'" onclick="openNav()">&#9776;Nav</span>
+
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <h1 id="randomMovieHeader">Click for a Random TV Show</h1>
+</nav>
+
+<div class="randomButtonDiv">
+    <button id="randomMovieBtn" onclick="randomTvBtn()">Click Me</button>
+</div>
+
+<script>
+    function randomTvBtn() {
+
+        var randomId = Math.floor(Math.random() * 3500) + 5;
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://api.themoviedb.org/3/tv/" + randomId + "?api_key=b2b33767c6b429003530678acd077911&amp;language=en-US",
+            "method": "GET",
+            "headers": {},
+            "data": "{}"
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            $(".tvContainer").append('<img src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>');
+            $(".tvContainer").append('<span>' + response.original_name + '</span>');
+            $(".tvContainer").append('<p>' + "Number of Seasons: " + response.number_of_seasons + '</p>');
+            $(".tvContainer").append('<p>' + response.overview + '</p>');
+
+        });
+        $(".tvContainer").empty();
+    }
+</script>
+
+<i class="material-icons">info
+    <a href="http://localhost:8080/"></a>
+</i>
+
+
+<div class="tvContainer"></div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>What 2 Watch</title>
+
+    <link rel="stylesheet" th:href="@{/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <!--<link rel="stylesheet" th:href="@{https://bootswatch.com/4/lux/bootstrap.css}"/>-->
+
+    <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/client.js}"></script>
+
+
+</head>
+
+<body style="padding: 0;">
+
+
+        <div id="videoDiv">
+            <div id="videoBlock">
+                <video id="video" autoplay="autoplay" loop="loop">
+                    <source src="images/w2wbackgroundTwo.mp4" type="video/mp4"/>
+                </video>
+
+                <div id="videoMessage" data-transform="scroll" data-transform-direction="up">
+                    <h1 class="spacer">What2Watch</h1>
+                    <h3>The worlds #1 entertainment search application.</h3>
+                    <ul class="nameSearchLink">
+
+                        <a href="#contentTwo">
+                            <button class="btn btn-info" id="learnMore" type="submit">Learn More</button>
+                        </a>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="contentOne" id="contentOne">
+            <div class="cardOne">
+                <div class="card-header">Search By Name</div>
+                <div class="card-body">
+                    <p class="card-text">Search your favorite actors and actresses to see a list of movies that they are known for.</p>
+                </div>
+
+                <ul class="nameSearchLink">
+
+                        <a href="http://localhost:8080/name">
+                            <button class="btn btn-info" type="submit">Search Now</button>
+                        </a>
+
+                </ul>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="contentTwo" id="contentTwo">
+
+            <div class="cardTwo">
+                <div class="card-header">Random Movie</div>
+                <div class="card-body">
+                    <p class="card-text">Want to find a movie you have never seen before?
+                        <br /> At the press of a button, W2W will find a random movie from our vast database for you to watch.</p>
+                </div>
+
+                <ul class="nameSearchLink">
+
+                    <a href="http://localhost:8080/randomMovie">
+                        <button class="btn btn-info" type="submit">Search Now</button>
+                    </a>
+
+                </ul>
+            </div>
+
+        </div>
+
+<div class="contentThree" id="contentThree">
+
+    <div class="cardThree">
+        <div class="card-header">Random TV Show</div>
+        <div class="card-body">
+            <p class="card-text"> Want to find a TV show you have never seen before?
+           <br/> At the press of a button, W2W will find a random TV show from our vast database for you to watch. </p>
+        </div>
+
+        <ul class="nameSearchLink">
+
+            <a href="http://localhost:8080/randomTV">
+                <button onclick="submitRandomM" class="btn btn-info" type="submit">Search Now</button>
+            </a>
+
+        </ul>
+    </div>
+
+</div>
+
+<div class="contentFour" id="contentFour">
+
+    <div class="cardFour">
+        <div class="card-header">Random Selection</div>
+        <div class="card-body">
+            <p class="card-text">Having trouble deciding which movie or TV show to watch first?
+                <br />Provide a selection of titles and sit back and relax while W2W randomly chooses from your list for you.</p>
+        </div>
+
+        <ul class="nameSearchLink">
+
+            <a href="http://localhost:8080/randomSelection">
+                <button class="btn btn-info" type="submit">Search Now</button>
+            </a>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+
+
+</body>
+
+</html>

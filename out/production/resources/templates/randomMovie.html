@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Random Movie</title>
+
+    <link rel="stylesheet" th:href="@{/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <!--<link rel="stylesheet" th:href="@{https://bootswatch.com/4/lux/bootstrap.css}"/>-->
+
+    <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/client.js}"></script>
+
+
+</head>
+<body id="movieBody">
+
+<div class="topnav">
+    <a class="nav-link" href="http://localhost:8080/">Home <span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="http://localhost:8080/randomSelection">Random Selection</a>
+    <a class="nav-link" href="http://localhost:8080/randomMovie">Find a Random Movie</a>
+    <a class="nav-link" href="http://localhost:8080/randomTV">Find a Random TV Show</a>
+    <a class="nav-link" href="http://localhost:8080/name">Search By Name</a>
+
+</div>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="http://localhost:8080/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/randomSelection">Random Selection</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/randomMovie">Find a Random Movie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/randomTV">Find a Random TV Show</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8080/name">Search By Name</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search"/>
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+
+
+<div class="movieContainer">
+    <img id="movieImg" src=" "/>
+</div>
+
+<button id="randomMovieBtn">
+    <h3>Click for a Random Movie:</h3>
+    <i class="fas fa-sync-alt"></i>
+</button>
+
+
+</body>
+</html>

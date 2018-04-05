@@ -1,0 +1,663 @@
+html, body {
+    display: contents;
+    background-color: ghostwhite;
+    padding: 0 100px 100px 100px;
+}
+
+/*body #movieBody {*/
+    /*padding: 0 100px 100px 100px;*/
+/*}*/
+
+.home {
+
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.share{
+    display:block;
+    margin-top: 200px;
+    width:100px;
+    height:100px;
+    background: white;
+    position:absolute;
+    top:300px;
+    left:50%;
+    z-index:999;
+    text-align:center;
+    overflow:hidden;
+    color: black;
+    -moz-box-shadow: 0px 3px 9px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0px 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0px 3px 9px rgba(0,0,0,.5);
+    border-radius:50px;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+}
+
+.share:hover{
+    cursor:pointer;
+}
+
+.share .learnMore {
+    text-align: center;
+    font-family: "SF Pro Display";
+    display: block;
+    margin: 0 auto;
+}
+
+.one, .two, .three{
+    position:absolute;
+    margin-top: 200px;
+    width:80px;
+    height:80px;
+    border-radius:50px;
+    top:300px;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    -webkit-box-shadow: 0px 3px 9px rgba(0,0,0,.2);
+    box-shadow: 0px 3px 9px rgba(0,0,0,.2);
+    -webkit-transition:transform  .3s ease-in-out;
+    transition:transform .3s ease-in-out;
+}
+
+.one:hover,
+.two:hover,
+.three:hover{
+    cursor:pointer;
+}
+
+
+.one{
+    background: white;
+}
+
+.one .homeOne {
+    text-align: center;
+    font-family: "SF Pro Display";
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.two{
+    background: white;
+}
+
+.two .homeTwo {
+    text-align: center;
+    font-family: "SF Pro Display";
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.three{
+    background: white;
+}
+
+.three .homeThree {
+    text-align: center;
+    font-family: "SF Pro Display";
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+.tvContainer .navbar-nav {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background: linear-gradient(to right, black , grey);
+    padding: 15px 15px 15px 15px;
+}
+
+
+hr p {
+    color: white;
+}
+
+.searchBtnDiv{
+    text-align: center;
+}
+
+
+.searchContainer img {
+    width: 30%;
+    height: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topnav {
+    background: linear-gradient(to right, black , grey);
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+}
+
+.topnav a {
+    display: inline;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "SF Pro Display";
+}
+
+
+.topnav a:hover {
+    color: red;
+}
+
+
+.card-header {
+    font-family: "SF Pro Display";
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+
+/*#cardDiv {*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*position: relative;*/
+/*}*/
+
+/*#cardBlock {*/
+    /*width: 100%;*/
+    /*height: 500px;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+/*}*/
+
+
+
+#videoDiv {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-attachment: fixed;
+}
+
+#videoBlock {
+    overflow: hidden;
+    width: auto;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#videoMessage {
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-attachment: fixed;
+}
+
+#videoMessage h1 {
+    font-family: "SF Pro Display";
+    font-size: 100px;
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 0;
+    color: white;
+}
+
+#videoMessage h3 {
+    font-family: "SF Pro Display";
+    font-size: 25px;
+    text-align: center;
+    padding: 0;
+    color: white;
+}
+
+.nameSearchTitle h1 {
+    font-family: "SF Pro Display";
+    font-size: 80px;
+    text-align: center;
+    color: black;
+}
+
+@font-face {
+    font-family: burbank;
+    src: url(fonts/burbank.otf);
+    /*font-family: SF-Pro-Text-Semibold.otf;*/
+    src: url(fonts/SF-Pro-Text-Semibold.otf);
+}
+
+
+
+.contentOne {
+    position:relative;
+    bottom:50%;
+    width: 100%;
+    height:100%;
+    font-size:30px;
+    color:white;
+    background-color: rgba(0,0,0,0.2);
+    padding: 100px 100px 100px 100px;
+}
+
+
+.cardOne {
+
+    background-color: skyblue;
+    margin: 0 auto;
+    color: black;
+    width: 50%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px black;
+    border-radius: 10px;
+    opacity: 1;
+    animation: fade 2s linear;
+}
+
+.card-header {
+    color: black;
+}
+
+.nameSearchLink {
+    background: none;
+
+}
+
+.nameSearchLink button {
+    background-color: white;
+    color: black;
+    border-color: white;
+    width: 50%;
+    margin-bottom: 20px;
+    height: auto;
+
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
+.contentTwo {
+    position:relative;
+    bottom:50%;
+    width: 100%;
+    height:100%;
+    font-size:30px;
+    color:black;
+    background-color: rgba(255,255,255,0.2);
+    padding: 100px 100px 100px 100px;
+}
+
+.cardTwo {
+    margin: 0 auto;
+    background-color: skyblue;
+    color: black;
+    width: 50%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px black;
+    border-radius: 10px;
+    opacity: 1;
+    animation: fade 2s linear;
+}
+
+@-webkit-keyframes slide {
+    100% { right: 0; }
+}
+
+@keyframes slide {
+    100% { right: 0; }
+}
+
+.contentThree {
+    background-color: rgba(0,0,0,0.2);
+    display: block;
+    position: relative;
+    padding: 100px 100px 100px 100px;
+}
+
+.contentThree .cardThree {
+    margin: 0 auto;
+    background-color: skyblue;
+    color: black;
+    width: 50%;
+    height: auto;
+    box-shadow: 0 0 30px black;
+    border-radius: 10px;
+    opacity: 1;
+    animation: fade 2s linear;
+}
+
+
+.contentFour {
+    background-color: rgba(255,255,255,0.2);
+    display: block;
+    position: relative;
+    padding: 100px 100px 100px 100px;
+}
+
+.contentFour .cardFour {
+    margin: 0 auto;
+    background-color: skyblue;
+    color: black;
+    width: 50%;
+    height: auto;
+    box-shadow: 0 0 30px black;
+    border-radius: 10px;
+    opacity: 1;
+    animation: fade 2s linear;
+}
+
+
+header h1 {
+    text-align: center;
+    color: black;
+    font-family: "SF Pro Display";
+    padding: 20px;
+    font-size: 100px;
+}
+
+.display-3 {
+    text-align: center;
+    color: white;
+    font-family: "SF Pro Display";
+    padding: 20px;
+    font-size: 80px;
+}
+
+p{
+    text-align: center;
+    color: black;
+    font-family: "SF Pro Display";
+    font-size: 30px;
+}
+
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+
+}
+
+.carousel-inner .carousel-item-right.active,
+.carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+}
+
+.carousel-inner .carousel-item-left.active,
+.carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{
+    transform: translateX(0);
+
+}
+
+
+.nameDiv {
+    margin: 100px 100px 300px 100px;
+    position: relative;
+}
+
+.nameDiv span {
+    display: block;
+    text-align: center;
+    font-family: "SF Pro Display";
+    font-size: 80px;
+}
+
+.nameDiv img {
+    width: 35%;
+    height: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 0;
+    box-shadow: 0 0 30px black;
+    border-radius: 10px;
+    opacity: 1;
+    animation: fade 2s linear;
+
+}
+
+.nameDiv #firstLine {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 5px;
+}
+
+.nameDiv ul {
+    text-align: left;
+    font-family: "SF Pro Display";
+    font-size: 20px;
+}
+
+.nameDiv p {
+    font-size: 20px;
+    padding: 20px;
+    text-indent: 50px;
+}
+
+.movieContainer {
+    /*background: linear-gradient(to bottom, black, darkgray);*/
+    margin: 0 100px 300px 100px;
+    position: relative;
+    border-color: black;
+    border-radius: 10px;
+    padding-top: 50px;
+    background-clip: content-box;
+}
+
+.movieContainer img {
+    width: 35%;
+    height: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+    opacity: 1;
+    animation: fade 2s linear;
+}
+
+
+
+.movieContainer span {
+    display: block;
+    text-align: center;
+    font-family: "SF Pro Display";
+    font-size: 100px;
+}
+
+
+@keyframes fade {
+    0%,100% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+.movieContainer ul {
+    text-align: left;
+    font-family: "SF Pro Display";
+    font-size: 20px;
+}
+
+.movieContainer p {
+    font-size: 20px;
+    padding: 20px;
+    color: black;
+    text-indent: 50px;
+    text-align: left;
+}
+
+.movieContainer h3 {
+    font-size: 20px;
+    padding: 20px;
+    color: black;
+    text-indent: 50px;
+    text-align: left;
+}
+
+
+.movieContainer #firstLine {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 5px;
+}
+
+.movieContainer span {
+    display: block;
+    text-align: center;
+    font-family: "SF Pro Display";
+    font-size: 50px;
+    color: black;
+
+}
+
+/*#RMsearchBtn{*/
+    /*background-image: -webkit-linear-gradient(top, lightgreen, skyblue);*/
+    /*background-image: linear-gradient(top, lightgreen, skyblue);*/
+    /*border-radius: 50%;*/
+    /*box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px lightgray, inset 0px -3px 1px 1px rgba(204,198,197,.5);*/
+    /*height: 100px;*/
+    /*position: relative;*/
+    /*width: 100px;*/
+    /*-webkit-transition: all .1s linear;*/
+    /*transition: all .1s linear;*/
+    /*display: block;*/
+    /*margin: 0 auto;*/
+    /*outline: none;*/
+    /*font-family: "SF Pro Display";*/
+    /*font-size: 25px;*/
+    /*color: white;*/
+/*}*/
+
+
+
+
+.tvContainer {
+    margin: 0 100px 300px 100px;
+    position: relative;
+    border-color: black;
+    border-radius: 10px;
+    padding-top: 50px;
+    background-clip: content-box;
+}
+
+.tvContainer img {
+    width: 35%;
+    height: 35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+    opacity: 1;
+    animation: fade 2s linear;
+}
+
+.tvContainer ul {
+    text-align: left;
+    font-family: "SF Pro Display";
+    font-size: 20px;
+}
+
+.tvContainer p {
+    font-size: 20px;
+    padding: 20px;
+    color: black;
+    text-indent: 50px;
+}
+
+
+.tvContainer #firstLine {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 5px;
+}
+.tvContainer span {
+    display: block;
+    text-align: center;
+    font-family: "SF Pro Display";
+    font-size: 50px;
+    color: black;
+    animation: fadein 2s;
+}
+
+#randomMovieBtn {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    position: relative;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    border-radius: 10px;
+    color: white;
+    text-shadow: -1px -1px 1px rgba(0,0,0,0.8);
+    border: 5px solid transparent;
+    border-bottom-color: rgba(0,0,0,0.35);
+    background: red;
+    cursor: pointer;
+    outline: 0 !important;
+    /*z-index: 1000;*/
+
+    animation: pulse 1s infinite alternate;
+    transition: background 0.4s, border 0.2s, margin 0.2s;
+}
+#randomMovieBtn:hover {
+    background: darkred;
+    margin-top: -1px;
+
+    animation: none;
+}
+#randomMovieBtn:active {
+    border-bottom-width: 0;
+    margin-top: 5px;
+}
+@keyframes pulse {
+    0% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: 6px;
+    }
+}
+
+
+
+
