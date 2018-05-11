@@ -2,64 +2,135 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Random Movie</title>
+    <title>What 2 Watch</title>
 
     <link rel="stylesheet" th:href="@{/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/style.css}"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <!--<link rel="stylesheet" th:href="@{https://bootswatch.com/4/lux/bootstrap.css}"/>-->
+    <link rel="stylesheet" th:href="@{/mdb.min.css}"/>
+    <link rel="stylesheet" th:href="@{/https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css}"/>
+
+
 
     <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/mdb.min.js}"></script>
+
     <script type="text/javascript" th:src="@{/client.js}"></script>
 
 
 </head>
 <body>
 
-<nav id="movieNav">
-<div id="mySidenav" class="sidenav">
-    <h5 style="font-family: SF Pro Display Bold; font-size: 40px; text-align: center; color: #818181;">W2W</h5>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="http://localhost:8080/">Home</a>
-    <a href="http://localhost:8080/randomTV">Random TV Show</a>
-    <a href="http://localhost:8080/name">Search By Name</a>
-    <a href="http://localhost:8080/randomSelection">Random Selection</a>
-</div>
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: rgba(43, 187, 173, 0.5);">
+    <div class="container">
 
+        <!-- Brand -->
+        <a class="navbar-brand">
+            <strong style="color: #ffffff;">W2W</strong>
+        </a>
 
-<span id="spanNavIdOne" style="font-size:30px;cursor:pointer; font-family: 'SF Pro Display'" onclick="openNav()">&#9776;Nav</span>
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/">About W2W</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/randomMovie">Random Movie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/randomTV">Random TV Show</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/name">Search By Name</a>
+                </li>
+            </ul>
 
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+            </ul>
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
+        </div>
 
-<h1 id="randomMovieHeader">Click for a Random Movie</h1>
+        <form class="form-inline">
+            <div class="md-form mt-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
+            </div>
+        </form>
+
+    </div>
 </nav>
+<!-- Navbar -->
 
-<div class="movieContainer"></div>
+
+
+
+
+<!-- Card -->
+<div class="card card-cascade wider reverse" style="background-color: transparent;">
+
+    <!-- Card image -->
+    <div class="view overlay">
+
+            <h1 class="welcomeIntro" style="text-align: center; transform: translateY(200%); margin: 0; font-family: SF-Pro-Display-Medium;">Click Below for a Random Movie..</h1>
+            <img class="welcomeImg" src="images/deadpool.jpg" style="width: 45%; position: absolute; margin-left: 20%; bottom: 0;"/>
+            <div class="movieContainer"></div>
+            <div class="mask rgba-white-slight"></div>
+
+    </div>
+    <!-- Card content -->
+    <div class="card-body text-center" style="padding: 0;">
+
+    </div>
+
+</div>
+<!-- Card -->
 
 <script>
     $( "#randomMovieBtn" ).click(function() {
         $( ".movieContainer" ).show( "slow" );
+
     });
 </script>
 
-<i class="material-icons">info
-<a id="infoIcon" href="#movieInfoDiv"></a>
-</i>
 
-        <div class="randomButtonDiv">
-            <button id="randomMovieBtn">Click Me</button>
-        </div>
-<div id="movieInfoDiv"></div>
+
+
+<div id="movieInfoDiv">
+
+    <div class="randomButtonDiv" style="margin-bottom: 20px">
+        <button class="btn btn-danger" id="randomMovieBtn" style="font-size: 20px; display: block; margin: 0 auto; border-radius: 50%; height: 60px;">
+            <span style="margin-top: 5px;" class="glyphicon glyphicon-random"></span></button>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+
 
 </body>
 </html>

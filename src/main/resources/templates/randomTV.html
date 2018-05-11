@@ -5,59 +5,122 @@
     <title>What 2 Watch</title>
 
     <link rel="stylesheet" th:href="@{/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/style.css}"/>
-    <!--<link rel="stylesheet" th:href="@{https://bootswatch.com/4/lux/bootstrap.css}"/>-->
+    <link rel="stylesheet" th:href="@{/mdb.min.css}"/>
+    <link rel="stylesheet" th:href="@{/https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css}"/>
+
+
 
     <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/mdb.min.js}"></script>
+
     <script type="text/javascript" th:src="@{/client.js}"></script>
 
 
 </head>
 <body>
 
-<div class="topnav">
-    <a class="nav-link" href="http://localhost:8080/">Home <span class="sr-only">(current)</span></a>
-    <a class="nav-link" href="http://localhost:8080/randomSelection">Random Selection</a>
-    <a class="nav-link" href="http://localhost:8080/randomMovie">Find a Random Movie</a>
-    <a class="nav-link" href="http://localhost:8080/randomTV">Find a Random TV Show</a>
-    <a class="nav-link" href="http://localhost:8080/name">Search By Name</a>
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: rgba(43, 187, 173, 0.5);">
+    <div class="container">
 
-</div>
+        <!-- Brand -->
+        <a class="navbar-brand">
+            <strong style="color: #ffffff;">W2W</strong>
+        </a>
 
-<nav id="movieNav">
-    <div id="mySidenav" class="sidenav">
-        <h5 style="font-family: SF Pro Display Bold; font-size: 40px; text-align: center; color: #818181;">W2W</h5>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="http://localhost:8080/">Home</a>
-        <a href="http://localhost:8080/randomTV">Random TV Show</a>
-        <a href="http://localhost:8080/name">Search By Name</a>
-        <a href="http://localhost:8080/randomSelection">Random Selection</a>
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/">About W2W</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/randomMovie">Random Movie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/randomTV">Random TV Show</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/name">Search By Name</a>
+                </li>
+            </ul>
+
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <form class="form-inline">
+            <div class="md-form mt-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
+            </div>
+        </form>
+
+    </div>
+</nav>
+<!-- Navbar -->
+
+
+
+
+
+<!-- Card -->
+<div class="card card-cascade wider reverse" style="background-color: transparent;">
+
+    <!-- Card image -->
+    <div class="view overlay">
+
+        <h1 class="welcomeIntro" style="text-align: center; transform: translateY(200%); position: relative; z-index: 5000; float: left; margin-left: 20px; font-family: SF-Pro-Display-Medium;">Click Below for a Random TV Show..</h1>
+        <img class="welcomeImg" src="images/theOffice.jpg" style="width: 100%; position: absolute; bottom: 0; transform: translateY(60px);"/>
+        <div class="tvContainer"></div>
+        <div class="mask rgba-white-slight"></div>
+    </div>
+    <!-- Card content -->
+    <div class="card-body text-center" style="padding: 0;">
+
     </div>
 
+</div>
+<!-- Card -->
 
-    <span id="spanNavIdOne" style="font-size:30px;cursor:pointer; font-family: 'SF Pro Display'" onclick="openNav()">&#9776;Nav</span>
+<div id="movieInfoDiv">
 
+    <div class="randomButtonDiv" style="margin-bottom: 20px">
+        <button class="btn btn-danger" id="randomTvBtn" style="font-size: 20px; display: block; margin: 0 auto; border-radius: 50%; height: 60px;">
+            <span style="margin-top: 5px;" class="glyphicon glyphicon-random"></span></button>
+    </div>
 
-
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
-
-    <h1 id="randomMovieHeader">Click for a Random TV Show</h1>
-</nav>
-
-<div class="randomButtonDiv">
-    <button id="randomMovieBtn" onclick="randomTvBtn()">Click Me</button>
 </div>
 
 <script>
-    function randomTvBtn() {
+    $("#randomTvBtn").on("click", function (event) {
+        event.preventDefault();
 
         var randomId = Math.floor(Math.random() * 3500) + 5;
         var settings = {
@@ -71,21 +134,19 @@
 
         $.ajax(settings).done(function (response) {
             console.log(response);
-            $(".tvContainer").append('<img src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>');
-            $(".tvContainer").append('<span>' + response.original_name + '</span>');
-            $(".tvContainer").append('<p>' + "Number of Seasons: " + response.number_of_seasons + '</p>');
-            $(".tvContainer").append('<p>' + response.overview + '</p>');
+            $(".tvContainer").append('<img id="movieImg" style="padding-top: 20px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
+            $(".tvContainer").append('<img id="backdrop" style="position: absolute; margin: 0 auto; display: block; width: 100%; height: auto; z-index: -1000; top: 0; opacity: .6; border-radius: 0; animation: none;" src="http://image.tmdb.org/t/p/original' + response.backdrop_path + '"/>');
+            $(".tvContainer").append('<a href="http://www.google.com/search?q=' + response.original_name + '" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>');
 
         });
         $(".tvContainer").empty();
-    }
+        $(".tvContainer").empty();
+        $(".welcomeIntro").empty();
+        $(".welcomeImg").remove();
+    });
 </script>
 
-<i class="material-icons">info
-    <a href="http://localhost:8080/"></a>
-</i>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
 
-
-<div class="tvContainer"></div>
 </body>
 </html>
