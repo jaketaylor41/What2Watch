@@ -670,3 +670,7 @@ p{
     position: relative;
 
 }
+
+.md-form label.active {
+    font-size: 15px;
+}

@@ -33,11 +33,11 @@ function enabled() {
             console.log(response);
             var results = response.results;
             for (var i = 0; i < results.length; i++) {
-                $(".nameDiv").append('<span>' + response.results[i].name + '</span>');
                 $(".nameDiv").append('<img src="http://image.tmdb.org/t/p/original' + response.results[i].profile_path + '"/>');
+                $(".nameDiv").append('<span>' + response.results[i].name + '</span>');
                 $(".nameDiv").append('<hr class="my-4" id="firstLine">');
                 $(".nameDiv").append('<span>' + "Known For:" + '</span>');
-                $(".nameDiv").append('<img class="name" src="http://image.tmdb.org/t/p/original' + response.results[i].known_for[0].poster_path + '"/>');
+                $(".nameDiv").append('<img class="name" onerror="brokenImage()" src="http://image.tmdb.org/t/p/original' + response.results[i].known_for[0].poster_path + '"/>');
                 $(".nameDiv").append('<span>' + response.results[i].known_for[0].original_title + '</span>');
                 $(".nameDiv").append('<ul><p>' + response.results[i].known_for[0].overview + '</ul></p>');
                 $(".nameDiv").append('<ul>' + "Popularity: " + response.results[i].known_for[0].popularity + '</ul>');
@@ -63,6 +63,13 @@ function enabled() {
                 $(".nameDiv").append('<hr class="my-4" id="firstLine">');
             }
 
+            function brokenImage(){
+                $('img').error(function(){
+                    $(this).attr('src', 'deadpool.jpg');
+                });
+
+            }
+
         });
         $("#searchByName").val("");
         $(".nameDiv").empty();
@@ -86,8 +93,8 @@ function enabled() {
 
         $.ajax(settings).done(function (response) {
             console.log(response);
-                $(".movieContainer").append('<img id="movieImg" style="padding-top: 20px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
-                $(".movieContainer").append('<img id="backdrop" style="position: absolute; margin: 0 auto; display: block; width: 100%; height: auto; z-index: -1000; top: 0; opacity: .6; border-radius: 0; animation: none;" src="http://image.tmdb.org/t/p/original' + response.backdrop_path + '"/>');
+                $(".movieContainer").append('<img id="movieImg" onerror="brokenImage()" style="padding-top: 20px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
+                $(".movieContainer").append('<img id="backdrop" onerror="brokenImage()" style="position: absolute; margin: 0 auto; display: block; width: 100%; height: auto; z-index: -1000; top: 0; opacity: .6; border-radius: 0; animation: none;" src="http://image.tmdb.org/t/p/original' + response.backdrop_path + '"/>');
                 $(".movieContainer").append('<a href="https://www.imdb.com/title/' + response.imdb_id +'" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>');
 
         });
@@ -95,6 +102,13 @@ function enabled() {
         $(".movieContainer").empty();
         $(".welcomeIntro").empty();
         $(".welcomeImg").remove();
+
+        function brokenImage(){
+            $('img').error(function(){
+                $(this).attr('src', 'deadpool.jpg');
+            });
+
+        }
 
     });
 }
