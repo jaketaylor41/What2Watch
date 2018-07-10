@@ -72,7 +72,7 @@ function enabled() {
         event.preventDefault();
 
 
-        var randomId = Math.floor(Math.random() * 3500) + 1;
+        var randomId = Math.floor(Math.random() * 99999) + 1;
         var settings = {
             "async": true,
             "crossDomain": true,
@@ -81,6 +81,7 @@ function enabled() {
             "cache": "false",
             "headers": {},
             "data": "{}"
+
         };
 
         $.ajax(settings).done(function (response) {
@@ -97,6 +98,7 @@ function enabled() {
 
     });
 }
+
 
     function actorCarousel() {
 
