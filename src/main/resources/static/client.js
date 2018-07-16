@@ -6,8 +6,6 @@ $(document).ready(function(){
 
 function init(){
     enabled();
-    actorCarousel();
-    randomMovie();
 
 
 }
@@ -37,7 +35,7 @@ function enabled() {
                 $(".nameDiv").append('<span>' + response.results[i].name + '</span>');
                 $(".nameDiv").append('<hr class="my-4" id="firstLine">');
                 $(".nameDiv").append('<span>' + "Known For:" + '</span>');
-                $(".nameDiv").append('<img class="name" onerror="brokenImage()" src="http://image.tmdb.org/t/p/original' + response.results[i].known_for[0].poster_path + '"/>');
+                $(".nameDiv").append('<img class="name" src="http://image.tmdb.org/t/p/original' + response.results[i].known_for[0].poster_path + '"/>');
                 $(".nameDiv").append('<span>' + response.results[i].known_for[0].original_title + '</span>');
                 $(".nameDiv").append('<ul><p>' + response.results[i].known_for[0].overview + '</ul></p>');
                 $(".nameDiv").append('<ul>' + "Popularity: " + response.results[i].known_for[0].popularity + '</ul>');
@@ -61,13 +59,6 @@ function enabled() {
                 $(".nameDiv").append('<ul>' + "Vote Average: " + response.results[i].known_for[2].vote_average + '</ul>');
                 $(".nameDiv").append('<ul>' + "Number of Voters: " + response.results[i].known_for[2].vote_count + '</ul>');
                 $(".nameDiv").append('<hr class="my-4" id="firstLine">');
-            }
-
-            function brokenImage(){
-                $('img').error(function(){
-                    $(this).attr('src', 'deadpool.jpg');
-                });
-
             }
 
         });
