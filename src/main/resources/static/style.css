@@ -675,7 +675,7 @@ p{
     font-size: 15px;
 }
 
-.loadingScreen{
+.randomMovieContainer{
     width: 100%;
     height: 550px;
     position: relative;
@@ -685,3 +685,4 @@ p{
     text-align: center;
     display: block;
 }
+

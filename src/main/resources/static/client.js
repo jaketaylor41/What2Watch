@@ -83,14 +83,15 @@ function enabled() {
         var settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://api.themoviedb.org/3/movie/" + randomId + "?api_key=b2b33767c6b429003530678acd077911&amp;language=en-US",
+            "url": "https://api.themoviedb.org/3/movie/" + randomId + "?api_key=b2b33767c6b429003530678acd077911&amp;language=en-US&amp;include_adult=false&amp;append_to_response=images&amp;include_image_language=en,null",
             "method": "GET",
             "cache": "false",
             "headers": {},
             "data": "{}",
             "error": function (jqXHR, textStatus){
-
                 if (jqXHR.status === 404) {
+
+
 
                     var imgArray = new Array();
                     imgArray[0] = "images/batman.jpg";
@@ -119,30 +120,31 @@ function enabled() {
                         rnd = 1;
                     }
 
-                    $(".movieContainer").append('<img id="movieImg" style="padding-top: 20px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
-                    $(".movieContainer").append('<img id="backdrop"  style="position: absolute; margin: 0 auto; display: block; width: 100%; height: auto; z-index: -1000; top: 0; opacity: .6; border-radius: 0; animation: none;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
-                    $(".movieContainer").append('<a href="https://www.imdb.com" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
+                    $(".randomMovieContainer").append('<img id="movieImg" style="padding-top: 20px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
+                    $(".randomMovieContainer").append('<img id="backdrop" style="position: absolute; margin: 0 auto; display: block; width: 100%; height: auto; z-index: -1000; top: 0; opacity: .6; border-radius: 0; animation: none;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
+                    $(".randomMovieContainer").append('<a href="https://www.imdb.com" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
 
                     // $(".movieContainer").append('<h1 class="welcomeIntro" style="text-align: center; transform: translateY(200%); margin: 0; font-family: SF-Pro-Display-Medium;">Bad Deadpool... Good Deadpool!</h1>');
                     // $(".movieContainer").append('<img src="images/deadpool.jpg" style="width: 45%; position: absolute; margin-left: 20%; bottom: 0;">')
                 }
-
+                
             }
         };
 
         $.ajax(settings).done(function (response) {
             console.log(response);
-                $(".movieContainer").append('<img id="movieImg" style="padding-top: 20px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
-                $(".movieContainer").append('<img id="backdrop" style="position: absolute; margin: 0 auto; display: block; width: 100%; height: auto; z-index: -1000; top: 0; opacity: .6; border-radius: 0; animation: none;" src="http://image.tmdb.org/t/p/original' + response.backdrop_path + '"/>').hide().fadeIn(2000);
-                $(".movieContainer").append('<a href="https://www.imdb.com/title/' + response.imdb_id +'" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
+                $(".randomMovieContainer").append('<img id="movieImg" style="padding-top: 20px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
+                $(".randomMovieContainer").append('<img id="backdrop" style="position: absolute; margin: 0 auto; display: block; width: 100%; height: auto; z-index: -1000; top: 0; opacity: .6; border-radius: 0; animation: none;" src="http://image.tmdb.org/t/p/original' + response.backdrop_path + '"/>').hide().fadeIn(2000);
+                $(".randomMovieContainer").append('<a href="https://www.imdb.com/title/' + response.imdb_id +'" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
 
         });
-        $(".movieContainer").empty();
+        $(".randomMovieContainer").empty();
         $(".welcomeIntro").empty();
         $(".welcomeImg").remove();
     });
 
 }
+
 
 
 $("#homeBtn").click(function(event) {
