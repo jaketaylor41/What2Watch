@@ -572,8 +572,7 @@ p{
     align-content: center;
     text-align: center;
     display: block;
-    background: linear-gradient(to right, #053177 , #6e9ce5);
-    z-index: -200;
+    background-image: url("images/movies2.jpg");
 }
 
 .movieContainer img {
