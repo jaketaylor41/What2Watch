@@ -82,16 +82,20 @@
 
 
 
-<!-- Card -->
 <div class="card card-cascade wider reverse" style="background-color: transparent;">
 
     <!-- Card image -->
     <div class="view overlay">
 
-        <h1 class="welcomeIntro" style="text-align: center; transform: translateY(200%); position: relative; z-index: 5000; float: left; margin-left: 20px; font-family: SF-Pro-Display-Medium;">Click Below for a Random TV Show..</h1>
-        <img class="welcomeImg" src="images/theOffice.jpg" style="width: 100%; position: absolute; bottom: 0; transform: translateY(60px);"/>
-        <div class="tvContainer"></div>
+        <div class="welcomeIntro">Click Below for a Random TV Show...</div>
+        <!--<h1 class="welcomeIntro" style="text-align: center; transform: translateY(200%); margin: 0; color: #ffffff; font-family: SF-Pro-Display-Medium;">Click Below for a Random Movie..</h1>-->
+        <img class="welcomeImg" src="images/deadpool.png" style="width: 45%; position: absolute; margin-left: 28%; bottom: 0; z-index: 200;"/>
+        <!--<div class="loadingScreen" style="display: none"></div>-->
+        <div class="movieContainer">
+            <div class="tvContainer"></div>
+        </div>
         <div class="mask rgba-white-slight"></div>
+
     </div>
     <!-- Card content -->
     <div class="card-body text-center" style="padding: 0;">
@@ -121,21 +125,20 @@
             "url": "https://api.themoviedb.org/3/tv/" + randomId + "?api_key=b2b33767c6b429003530678acd077911&amp;language=en-US",
             "method": "GET",
             "headers": {},
-            "data": "{}"
+            "data": "{}",
+            "error": function (jqXHR, textStatus){
+                if (jqXHR.status === 404) {
+
+
+
+                }
+            }
         };
 
         $.ajax(settings).done(function (response) {
             console.log(response);
-            $(".tvContainer").append('<img id="movieImg" onerror="brokenImage()" style="padding-top: 20px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
-            $(".tvContainer").append('<img id="backdrop" onerror="brokenImage()" style="position: absolute; margin: 0 auto; display: block; width: 100%; height: auto; z-index: -1000; top: 0; opacity: .6; border-radius: 0; animation: none;" src="http://image.tmdb.org/t/p/original' + response.backdrop_path + '"/>');
+            $(".tvContainer").append('<img id="movieImg" onerror="imgError(this)" style="padding-top: 20px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
             $(".tvContainer").append('<a href="http://www.google.com/search?q=' + response.original_name + '" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>');
-
-            function brokenImage(){
-                $('img').error(function(){
-                    $(this).attr('src', 'deadpool.jpg');
-                });
-
-            }
 
         });
         $(".tvContainer").empty();
@@ -143,6 +146,14 @@
         $(".welcomeIntro").empty();
         $(".welcomeImg").remove();
     });
+</script>
+
+<script>
+    function imgError(image) {
+        image.onerror = "";
+        image.src = "images/tommyBoy.jpg";
+        return true;
+    }
 </script>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
