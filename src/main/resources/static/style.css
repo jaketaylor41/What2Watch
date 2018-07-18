@@ -687,3 +687,14 @@ p{
     display: block;
 }
 
+.welcomeIntro{
+
+    position: absolute;
+    z-index: 200;
+    color: #ffffff;
+    left: 30%;
+    margin-top: 50px;
+    font-size: 40px;
+    font-family: "SF Pro Display";
+}
+

@@ -111,7 +111,7 @@ function enabled() {
                         rnd = 1;
                     }
 
-                    $(".randomMovieContainer").append('<img id="movieImg" style="padding-top: 20px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
+                    $(".randomMovieContainer").append('<img id="movieImg" style="padding-top: 20px; height: 450px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
                     $(".randomMovieContainer").append('<a href="https://www.imdb.com" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
 
                     // $(".movieContainer").append('<h1 class="welcomeIntro" style="text-align: center; transform: translateY(200%); margin: 0; font-family: SF-Pro-Display-Medium;">Bad Deadpool... Good Deadpool!</h1>');
@@ -123,7 +123,7 @@ function enabled() {
 
         $.ajax(settings).done(function (response) {
             console.log(response);
-                $(".randomMovieContainer").append('<img id="movieImg" onerror="imgError(image)" style="padding-top: 20px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
+                $(".randomMovieContainer").append('<img id="movieImg" onerror="imgError(this)" style="padding-top: 20px; height: 450px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
                 // $(".randomMovieContainer").append('<img id="backdrop" onerror="imgError(this)" style="position: absolute; margin: 0 auto; display: block; width: 100%; height: auto; z-index: -1000; top: 0; opacity: .6; border-radius: 0; animation: none;" src="http://image.tmdb.org/t/p/original' + response.backdrop_path + '"/>').hide().fadeIn(2000);
                 $(".randomMovieContainer").append('<a href="https://www.imdb.com/title/' + response.imdb_id +'" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
 
@@ -137,7 +137,7 @@ function enabled() {
 
 function imgError(image) {
     image.onerror = "";
-    image.src = imgArray[rnd];
+    image.src = "images/tommyBoy.jpg";
     return true;
 }
 
