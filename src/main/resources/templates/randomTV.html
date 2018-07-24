@@ -149,7 +149,7 @@
                         rnd = 1;
                     }
 
-                    $(".tvContainer").append('<img id="movieImg" style="padding-top: 20px; height: 450px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
+                    $(".tvContainer").append('<img id="movieImg" style="padding-top: 20px; height: 500px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
                     $(".tvContainer").append('<a href="https://www.imdb.com" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
 
 
@@ -159,11 +159,11 @@
 
         $.ajax(settings).done(function (response) {
             console.log(response);
-            $(".tvContainer").append('<img id="movieImg" onerror="tvError(this)" style="padding-top: 20px; height: 450px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
+            $(".tvContainer").append('<img id="movieImg" onerror="tvError(this)" style="padding-top: 20px; height: 500px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
             $(".tvContainer").append('<a href="http://www.google.com/search?q=' + response.original_name + '" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').fadeIn(2000);
 
         });
-        $(".tvContainer").empty();
+
         $(".tvContainer").empty();
         $(".welcomeIntro").empty();
         $(".welcomeImg").remove();
@@ -195,7 +195,7 @@
             rnd = 1;
         }
 
-        $(".tvContainer").append('<img id="movieImg" style="padding-top: 20px; height: 450px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
+        $(".tvContainer").append('<img id="movieImg" style="padding-top: 20px; height: 500px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
         $(".tvContainer").append('<a href="https://www.imdb.com" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
 
     }
