@@ -89,9 +89,9 @@
 
         <div class="welcomeIntro">Click Below for a Random TV Show...</div>
         <!--<h1 class="welcomeIntro" style="text-align: center; transform: translateY(200%); margin: 0; color: #ffffff; font-family: SF-Pro-Display-Medium;">Click Below for a Random Movie..</h1>-->
-        <img class="welcomeImg" src="images/deadpool.png" style="width: 45%; position: absolute; margin-left: 28%; bottom: 0; z-index: 200;"/>
+        <img class="welcomeImg" src="images/deadpool2.png" style="width: 45%; position: absolute; margin-left: 28%; bottom: 0; z-index: 200;"/>
         <!--<div class="loadingScreen" style="display: none"></div>-->
-        <div class="movieContainer">
+        <div class="randomTvContainer">
             <div class="tvContainer"></div>
         </div>
         <div class="mask rgba-white-slight"></div>
@@ -129,6 +129,28 @@
             "error": function (jqXHR, textStatus){
                 if (jqXHR.status === 404) {
 
+                    var imgArray = new Array();
+                    imgArray[0] = "tvimages/brooklyn.jpg";
+                    imgArray[1] = "tvimages/friends.jpg";
+                    imgArray[2] = "tvimages/got.jpg";
+                    imgArray[3] = "tvimages/greys.jpg";
+                    imgArray[4] = "tvimages/luke.jpg";
+                    imgArray[5] = "tvimages/westworld.jpg";
+                    imgArray[6] = "tvimages/reasons.jpg";
+                    imgArray[7] = "tvimages/office.jpg";
+                    imgArray[8] = "tvimages/handmaid.jpg";
+                    imgArray[9] = "tvimages/sharp.jpg";
+                    imgArray[10] = "tvimages/suits.jpg";
+                    imgArray[12] = "tvimages/supernatural.jpg";
+                    imgArray[13] = "tvimages/walking.jpg";
+
+                    var rnd = Math.floor(Math.random() * imgArray.length);
+                    if (rnd == 0) {
+                        rnd = 1;
+                    }
+
+                    $(".tvContainer").append('<img id="movieImg" style="padding-top: 20px; height: 450px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
+                    $(".tvContainer").append('<a href="https://www.imdb.com" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
 
 
                 }
@@ -137,8 +159,8 @@
 
         $.ajax(settings).done(function (response) {
             console.log(response);
-            $(".tvContainer").append('<img id="movieImg" onerror="imgError(this)" style="padding-top: 20px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
-            $(".tvContainer").append('<a href="http://www.google.com/search?q=' + response.original_name + '" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>');
+            $(".tvContainer").append('<img id="movieImg" onerror="tvError(this)" style="padding-top: 20px; height: 450px;" src="http://image.tmdb.org/t/p/original' + response.poster_path + '"/>').hide().fadeIn(2000);
+            $(".tvContainer").append('<a href="http://www.google.com/search?q=' + response.original_name + '" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').fadeIn(2000);
 
         });
         $(".tvContainer").empty();
@@ -149,12 +171,36 @@
 </script>
 
 <script>
-    function imgError(image) {
-        image.onerror = "";
-        image.src = "images/tommyBoy.jpg";
-        return true;
+    function tvError(image) {
+        // image.style.display = "none";
+        $(".tvContainer").empty();
+
+        var imgArray = new Array();
+        imgArray[0] = "tvimages/brooklyn.jpg";
+        imgArray[1] = "tvimages/friends.jpg";
+        imgArray[2] = "tvimages/got.jpg";
+        imgArray[3] = "tvimages/greys.jpg";
+        imgArray[4] = "tvimages/luke.jpg";
+        imgArray[5] = "tvimages/westworld.jpg";
+        imgArray[6] = "tvimages/reasons.jpg";
+        imgArray[7] = "tvimages/office.jpg";
+        imgArray[8] = "tvimages/handmaid.jpg";
+        imgArray[9] = "tvimages/sharp.jpg";
+        imgArray[10] = "tvimages/suits.jpg";
+        imgArray[12] = "tvimages/supernatural.jpg";
+        imgArray[13] = "tvimages/walking.jpg";
+
+        var rnd = Math.floor(Math.random() * imgArray.length);
+        if (rnd == 0) {
+            rnd = 1;
+        }
+
+        $(".tvContainer").append('<img id="movieImg" style="padding-top: 20px; height: 450px;" src="' + imgArray[rnd] + '"/>').hide().fadeIn(2000);
+        $(".tvContainer").append('<a href="https://www.imdb.com" target="_blank"><span style="margin: 10px 0 10px 0; font-size: 25px; position: relative; z-index: 5000; display: inline-block;" class="glyphicon glyphicon-info-sign"></span></a>').hide().fadeIn(2000);
+
     }
 </script>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
 
