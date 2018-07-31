@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>What 2 Watch</title>
+
+    <link rel="stylesheet" th:href="@{/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <link rel="stylesheet" th:href="@{/mdb.min.css}"/>
+    <link rel="stylesheet" th:href="@{/https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css}"/>
+
+
+    <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/mdb.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/client.js}"></script>
+
+
+</head>
+<body class="homeIntro">
+
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: rgba(43, 187, 173, 0.5);">
+    <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand"  href="http://localhost:8080/">
+            <strong style="color: #ffffff;">W2W</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/randomMovie">Random Movie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/randomTV">Random TV Show</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8080/name">Search By Name</a>
+                </li>
+            </ul>
+
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <form class="form-inline">
+            <div class="md-form mt-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
+            </div>
+        </form>
+
+    </div>
+</nav>
+<!-- Navbar -->
+
+<!-- Background Image -->
+    <div class="homeImage">
+        <img src="images/movies.jpg" style="opacity: 0.2; width: 100%; height: 670px;" />
+    </div>
+
+    <div class="homeText">
+        <h1>What2Watch</h1>
+        <h6>Finding something new to watch just got easier.</h6>
+        <a style="display: block; margin: 0 auto; width: 15%;" class="btn btn-default" href="#contentOne">Learn More</a>
+    </div>
+
+<div style="padding-top: 10px;" id="contentOne">
+    <div class="card-deck" style="margin: 100px 50px 100px 50px;">
+
+        <!-- Card -->
+        <div class="card mb-4">
+
+            <!--Card image-->
+            <div class="view overlay">
+                <img class="card-img-top" src="images/hollywoodsign.jpg" alt="Card image cap"/>
+                <a href="#!">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+                <!--Title-->
+                <h4 class="card-title" style="text-align: center">Random Movie</h4>
+                <!--Text-->
+                <p style="font-size: 20px;" class="card-text">Find a random movie from any genre at the click of a button.</p>
+                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                <a class="btn btn-light-blue btn-md" href="http://localhost:8080/randomMovie">Go Now</a>
+
+            </div>
+
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="card mb-4">
+
+            <!--Card image-->
+            <div class="view overlay">
+                <img class="card-img-top" src="images/RandomTv.jpg" alt="Card image cap"/>
+                <a href="#!">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+                <!--Title-->
+                <h4 class="card-title" style="text-align: center">Random TV Show</h4>
+                <!--Text-->
+                <p style="font-size: 20px;" class="card-text">Find a random TV show from any genre at the click of a button.</p>
+                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                <a class="btn btn-light-blue btn-md" href="http://localhost:8080/randomTV">Go Now</a>
+
+            </div>
+
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="card mb-4">
+
+            <!--Card image-->
+            <div class="view overlay">
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg" alt="Card image cap"/>
+                <a href="#!">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+
+                <!--Title-->
+                <h4 class="card-title" style="text-align: center">Search By Name</h4>
+                <!--Text-->
+                <p style="font-size: 20px;" class="card-text">Search an actor or actresses name to see three movies they are known for.</p>
+                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                <a class="btn btn-light-blue btn-md" href="http://localhost:8080/name">Go Now</a>
+            </div>
+
+        </div>
+        <!-- Card -->
+
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>
+
+
+</body>
+</html>
